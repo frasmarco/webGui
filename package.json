@@ -11,7 +11,8 @@
     "e2e": "ng e2e",
     "build:prod": "ng build -prod -aot --base-href /web/",
     "sync": "rsync -avz --delete dist/ speleogis.frasmarco.tech:/var/www/html/web/",
-    "deploy": "npm run build:prod&&npm run sync"
+    "precache": "sw-precache --verbose --config=sw-precache-config.js",
+    "deploy": "npm run build:prod&&npm run precache&&npm run sync"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.0.1",
+    "eslint": "^4.4.1",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
@@ -45,6 +47,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
+    "sw-precache": "^5.2.0",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
     "typescript": "~2.3.3"
