@@ -8,7 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:prod": "ng build -prod -aot --base-href /web/",
+    "sync": "rsync -avz --delete dist/ speleogis.frasmarco.tech:/var/www/html/web/",
+    "deploy": "npm run build:prod&&npm run sync"
   },
   "private": true,
   "dependencies": {
