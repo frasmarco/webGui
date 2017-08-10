@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~font-awesome/css/font-awesome.css';
+@import '~bootstrap/dist/css/bootstrap.css';
+
+/* SmartAdmin Styles : Caution! DO NOT change the order */
+/* @import 'assets/css/smartadmin-production-plugins.min.css';*/
+@import 'assets/css/smartadmin-production.min.css';
+@import 'assets/css/smartadmin-skins.min.css';
+
+/* SmartAdmin Angular 2. Flex Layout */
+/* @import 'assets/css/smartadmin-angular-next.css' */
+
+/* Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp */
+@import 'assets/css/demo.min.css';

@@ -17,7 +17,7 @@ export const config: any = {
       style: {
         backgroundColor: '#4E463F'
       },
-      label: 'Smart Default'
+      label: 'Default'
     },
 
     {

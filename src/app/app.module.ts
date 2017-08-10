@@ -1,16 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
 
+import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 
-const appRoutes: Routes = [
-  { path: '',
-    component: AppComponent,
-    pathMatch: 'full'
-  },
-  { path: '**', component: PageNotFoundComponent }
-];
+// Core providers
+import {CoreModule} from './core/core.module';
+import {SmartadminLayoutModule} from './shared/layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -18,10 +16,16 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    BrowserAnimationsModule,
+    // FormsModule,
+    HttpModule,
+
+    CoreModule,
+    SmartadminLayoutModule,
+
+
+
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

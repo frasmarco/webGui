@@ -1,29 +1,29 @@
 import {Component, OnInit, Injectable} from '@angular/core';
 
 import {config} from '../smartadmin.config';
-import {Observable, Subject, Subscription} from "rxjs/Rx";
+import {Observable, Subject, Subscription} from 'rxjs/Rx';
 
 
 import 'rxjs/add/operator/debounceTime';
-import {NotificationService} from "../utils/notification.service";
+import {NotificationService} from '../utils/notification.service';
 
-declare var $:any;
+declare var $: any;
 
 
 const store = {
   smartSkin: localStorage.getItem('sm-skin') || config.smartSkin,
   skin: config.skins.find((_skin) => {
-    return _skin.name == (localStorage.getItem('sm-skin') || config.smartSkin)
+    return _skin.name === (localStorage.getItem('sm-skin') || config.smartSkin);
   }),
   skins: config.skins,
-  fixedHeader: localStorage.getItem('sm-fixed-header') == 'true',
-  fixedNavigation: localStorage.getItem('sm-fixed-navigation') == 'true',
-  fixedRibbon: localStorage.getItem('sm-fixed-ribbon') == 'true',
-  fixedPageFooter: localStorage.getItem('sm-fixed-page-footer') == 'true',
-  insideContainer: localStorage.getItem('sm-inside-container') == 'true',
-  rtl: localStorage.getItem('sm-rtl') == 'true',
-  menuOnTop: localStorage.getItem('sm-menu-on-top') == 'true',
-  colorblindFriendly: localStorage.getItem('sm-colorblind-friendly') == 'true',
+  fixedHeader: localStorage.getItem('sm-fixed-header') === 'true',
+  fixedNavigation: localStorage.getItem('sm-fixed-navigation') === 'true',
+  fixedRibbon: localStorage.getItem('sm-fixed-ribbon') === 'true',
+  fixedPageFooter: localStorage.getItem('sm-fixed-page-footer') === 'true',
+  insideContainer: localStorage.getItem('sm-inside-container') === 'true',
+  rtl: localStorage.getItem('sm-rtl') === 'true',
+  menuOnTop: localStorage.getItem('sm-menu-on-top') === 'true',
+  colorblindFriendly: localStorage.getItem('sm-colorblind-friendly') === 'true',
 
   shortcutOpen: false,
   isMobile: 	(/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase())),
@@ -37,20 +37,20 @@ const store = {
 
 @Injectable()
 export class LayoutService {
-  isActivated:boolean;
-  smartSkin:string;
+  isActivated: boolean;
+  smartSkin: string;
 
-  store:any;
+  store: any;
 
-  private subject:Subject<any>;
+  private subject: Subject<any>;
 
   trigger() {
     this.processBody(this.store);
-    this.subject.next(this.store)
+    this.subject.next(this.store);
   }
 
   subscribe(next, err?, complete?) {
-    return this.subject.subscribe(next, err, complete)
+    return this.subject.subscribe(next, err, complete);
   }
 
   constructor(private notificationService: NotificationService) {
@@ -58,9 +58,9 @@ export class LayoutService {
     this.store = store;
     this.trigger();
 
-    Observable.fromEvent(window, 'resize').debounceTime(100).map(()=>{
-      this.trigger()
-    }).subscribe()
+    Observable.fromEvent(window, 'resize').debounceTime(100).map(() => {
+      this.trigger();
+    }).subscribe();
   }
 
 
@@ -68,18 +68,18 @@ export class LayoutService {
     this.store.skin = skin;
     this.store.smartSkin = skin.name;
     this.dumpStorage();
-    this.trigger()
+    this.trigger();
   }
 
 
   onFixedHeader() {
     this.store.fixedHeader = !this.store.fixedHeader;
-    if (this.store.fixedHeader == false) {
+    if (this.store.fixedHeader === false) {
       this.store.fixedRibbon = false;
       this.store.fixedNavigation = false;
     }
     this.dumpStorage();
-    this.trigger()
+    this.trigger();
   }
 
 
@@ -93,7 +93,7 @@ export class LayoutService {
       this.store.fixedRibbon = false;
     }
     this.dumpStorage();
-    this.trigger()
+    this.trigger();
   }
 
 
@@ -105,14 +105,14 @@ export class LayoutService {
       this.store.insideContainer = false;
     }
     this.dumpStorage();
-    this.trigger()
+    this.trigger();
   }
 
 
   onFixedPageFooter() {
     this.store.fixedPageFooter = !this.store.fixedPageFooter;
     this.dumpStorage();
-    this.trigger()
+    this.trigger();
   }
 
 
@@ -123,48 +123,48 @@ export class LayoutService {
       this.store.fixedNavigation = false;
     }
     this.dumpStorage();
-    this.trigger()
+    this.trigger();
   }
 
 
   onRtl() {
     this.store.rtl = !this.store.rtl;
     this.dumpStorage();
-    this.trigger()
+    this.trigger();
   }
 
 
   onMenuOnTop() {
     this.store.menuOnTop = !this.store.menuOnTop;
     this.dumpStorage();
-    this.trigger()
+    this.trigger();
   }
 
 
   onColorblindFriendly() {
     this.store.colorblindFriendly = !this.store.colorblindFriendly;
     this.dumpStorage();
-    this.trigger()
+    this.trigger();
   }
 
-  onCollapseMenu(value?){
-    if(typeof value !== 'undefined'){
-      this.store.menuCollapsed = value
+  onCollapseMenu(value?) {
+    if (typeof value !== 'undefined') {
+      this.store.menuCollapsed = value;
     } else {
       this.store.menuCollapsed = !this.store.menuCollapsed;
     }
 
     this.trigger();
   }
-  
 
-  onMinifyMenu(){
-    this.store.menuMinified = !this.store.menuMinified;    
+
+  onMinifyMenu() {
+    this.store.menuMinified = !this.store.menuMinified;
     this.trigger();
   }
 
-  onShortcutToggle(condition?: any){
-    if(condition == null){
+  onShortcutToggle(condition?: any) {
+    if (condition == null) {
       this.store.shortcutOpen = !this.store.shortcutOpen;
     } else {
       this.store.shortcutOpen = !!condition;
@@ -188,23 +188,23 @@ export class LayoutService {
 
   factoryReset() {
     this.notificationService.smartMessageBox({
-      title: "<i class='fa fa-refresh' style='color:green'></i> Clear Local Storage",
-      content: "Would you like to RESET all your saved widgets and clear LocalStorage?",
+      title: '<i class=\'fa fa-refresh\' style=\'color:green\'></i> Clear Local Storage',
+      content: 'Would you like to RESET all your saved widgets and clear LocalStorage?',
       buttons: '[No][Yes]'
     }, (ButtonPressed) => {
-      if (ButtonPressed == "Yes" && localStorage) {
+      if (ButtonPressed === 'Yes' && localStorage) {
         localStorage.clear();
-        location.reload()
+        location.reload();
       }
     });
   }
 
 
   processBody(state) {
-    let $body = $('body');
-    $body.removeClass(state.skins.map((it)=>(it.name)).join(' '));
+    const $body = $('body');
+    $body.removeClass(state.skins.map((it) => (it.name)).join(' '));
     $body.addClass(state.skin.name);
-    $("#logo img").attr('src', state.skin.logo);
+    $('#logo img').attr('src', state.skin.logo);
 
     $body.toggleClass('fixed-header', state.fixedHeader);
     $body.toggleClass('fixed-navigation', state.fixedNavigation);
@@ -223,29 +223,31 @@ export class LayoutService {
       $body.removeClass('minified');
     }
 
-    if(state.isMobile){
-      $body.addClass("mobile-detected");
+    if (state.isMobile) {
+      $body.addClass('mobile-detected');
     } else {
-      $body.addClass("desktop-detected");
+      $body.addClass('desktop-detected');
     }
 
-    if (state.menuOnTop) $body.removeClass('minified');
+    if (state.menuOnTop) {
+      $body.removeClass('minified');
+    }
 
 
     if (!state.menuOnTop) {
-      $body.toggleClass("hidden-menu-mobile-lock", state.menuCollapsed);
-      $body.toggleClass("hidden-menu", state.menuCollapsed);
-      $body.removeClass("minified");
+      $body.toggleClass('hidden-menu-mobile-lock', state.menuCollapsed);
+      $body.toggleClass('hidden-menu', state.menuCollapsed);
+      $body.removeClass('minified');
     } else if (state.menuOnTop && state.mobileViewActivated) {
-      $body.toggleClass("hidden-menu-mobile-lock", state.menuCollapsed);
-      $body.toggleClass("hidden-menu", state.menuCollapsed);
-      $body.removeClass("minified");
+      $body.toggleClass('hidden-menu-mobile-lock', state.menuCollapsed);
+      $body.toggleClass('hidden-menu', state.menuCollapsed);
+      $body.removeClass('minified');
     }
 
-    if(state.menuMinified && !state.menuOnTop && !state.mobileViewActivated){
-       $body.addClass("minified");
-       $body.removeClass("hidden-menu");
-       $body.removeClass("hidden-menu-mobile-lock");
+    if (state.menuMinified && !state.menuOnTop && !state.mobileViewActivated) {
+       $body.addClass('minified');
+       $body.removeClass('hidden-menu');
+       $body.removeClass('hidden-menu-mobile-lock');
     }
   }
 }

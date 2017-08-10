@@ -1,17 +1,17 @@
-import {Subscription} from "rxjs/Rx";
+import {Subscription} from 'rxjs/Rx';
 import {
   Component, OnInit, OnDestroy, ElementRef,
   Renderer, AfterViewInit, AfterContentInit
 } from '@angular/core';
-import { Router} from "@angular/router";
+import { Router} from '@angular/router';
 
-import {LayoutService} from "../layout.service";
+import {LayoutService} from '../layout.service';
 
 import { trigger,
   state,
   style,
   transition,
-  animate} from '@angular/animations'
+  animate} from '@angular/animations';
 
 @Component({
   selector: 'sa-shortcut',
@@ -25,22 +25,22 @@ import { trigger,
         height: '*',
       })),
       transition('out => in', animate('250ms ease-out')),
-      transition('in => out', animate('250ms 300ms ease-in '))
+      transition('in => out', animate('250ms 300ms ease-in'))
     ])
   ]
 })
 export class ShortcutComponent implements OnInit, AfterViewInit, AfterContentInit, OnDestroy {
 
 
-  public state:string = 'out';
+  public state = 'out';
 
-  private layoutSub:Subscription;
-  private documentSub:any;
+  private layoutSub: Subscription;
+  private documentSub: any;
 
-  constructor(private layoutService:LayoutService,
-              private router:Router,
-              private renderer:Renderer,
-              private el:ElementRef) {
+  constructor(private layoutService: LayoutService,
+              private router: Router,
+              private renderer: Renderer,
+              private el: ElementRef) {
   }
 
   shortcutTo(route) {
@@ -53,24 +53,24 @@ export class ShortcutComponent implements OnInit, AfterViewInit, AfterContentIni
   }
 
   listen() {
-    this.layoutSub = this.layoutService.subscribe((store)=> {
-      this.state = store.shortcutOpen ? 'in' : 'out'
+    this.layoutSub = this.layoutService.subscribe((store) => {
+      this.state = store.shortcutOpen ? 'in' : 'out';
 
       if (store.shortcutOpen) {
         this.documentSub = this.renderer.listenGlobal('document', 'mouseup', (event) => {
           if (!this.el.nativeElement.contains(event.target)) {
             this.layoutService.onShortcutToggle(false);
-            this.documentUnsub()
+            this.documentUnsub();
           }
         });
       } else {
-        this.documentUnsub()
+        this.documentUnsub();
       }
-    })
+    });
   }
 
   ngAfterContentInit() {
-    this.listen()
+    this.listen();
 
   }
 
