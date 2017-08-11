@@ -89,7 +89,7 @@ export const config: any = {
    * The colors are best displayed in chrome browser.
    */
 
-  debugState: false,
+  debugState: true,
   debugStyle: 'font-weight: bold; color: #00f;',
   debugStyle_green: 'font-weight: bold; font-style:italic; color: #46C246;',
   debugStyle_red: 'font-weight: bold; color: #ed1c24;',
@@ -176,7 +176,7 @@ export const config: any = {
   /**
    *  Use localstorage to remember on/off (best used with HTML Version)
    */
-  voice_localStorage: false,
+  voice_localStorage: true,
   /**
    * Voice Commands
    * Defines all voice command variables and functions

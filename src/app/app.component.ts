@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +6,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'Speleo Web Gis';
-  // public constructor(private viewContainerRef: ViewContainerRef) {}
+  public constructor(private viewContainerRef: ViewContainerRef) {}
 }
-
-// import {Component, ViewContainerRef} from '@angular/core';

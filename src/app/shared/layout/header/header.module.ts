@@ -19,7 +19,7 @@ import {UserModule} from '../../user/user.module';
 import {VoiceControlModule} from '../../voice-control/voice-control.module';
 import {BsDropdownModule} from 'ngx-bootstrap';
 import { CollapseMenuComponent } from './collapse-menu/collapse-menu.component';
-import { FullScreenComponent } from '../full-screen/full-screen.component';
+import { FullScreenComponent } from './full-screen/full-screen.component';
 
 
 @NgModule({

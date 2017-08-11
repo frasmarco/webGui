@@ -1,5 +1,5 @@
 import {Component, OnInit, Inject, ViewContainerRef, ViewChild} from '@angular/core';
-import {VoiceControlService} from "./voice-control.service";
+import {VoiceControlService} from './voice-control.service';
 
 @Component({
   selector: 'sa-commands-help',
@@ -15,11 +15,11 @@ export class CommandsHelpComponent implements OnInit {
   ngOnInit() {
   }
 
-  public show(){
-    this.seeCommandsModal.show()
+  public show() {
+    this.seeCommandsModal.show();
   }
 
-  public hide(){
-    this.seeCommandsModal.hide()
+  public hide() {
+    this.seeCommandsModal.hide();
   }
 }

@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ModalModule} from "ngx-bootstrap";
+import {ModalModule} from 'ngx-bootstrap';
 
-import {SoundModule} from "../sound/sound.module";
-import {UtilsModule} from "../utils/utils.module";
+import {SoundModule} from '../sound/sound.module';
+import {UtilsModule} from '../utils/utils.module';
 
-import {VoiceControlService} from "./voice-control.service";
+import {VoiceControlService} from './voice-control.service';
 import {CommandsHelpComponent} from './commands-help.component';
-import {VoiceRecognitionService} from "./voice-recognition.service";
+import {VoiceRecognitionService} from './voice-recognition.service';
 
 
 @NgModule({
@@ -25,6 +25,6 @@ export class VoiceControlModule {
     return {
       ngModule: VoiceControlModule,
       providers: [VoiceControlService, VoiceRecognitionService]
-    }
+    };
   }
 }

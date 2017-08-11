@@ -4,18 +4,20 @@ import {
 } from '@angular/core';
 
 import {config} from '../smartadmin.config';
-import {CommandsHelpComponent} from "./commands-help.component";
-import {SoundService} from "../sound/sound.service";
-import {SpeechRecognition} from "./speech-recognition.api";
-import {VoiceRecognitionService} from "./voice-recognition.service";
-import {NotificationService} from "../utils/notification.service";
-import {BodyService} from "../utils/body.service";
-import {Router} from "@angular/router";
-import {LayoutService} from "../layout/layout.service";
+import {CommandsHelpComponent} from './commands-help.component';
+import {SoundService} from '../sound/sound.service';
+import {SpeechRecognition} from './speech-recognition.api';
+import {VoiceRecognitionService} from './voice-recognition.service';
+import {NotificationService} from '../utils/notification.service';
+import {BodyService} from '../utils/body.service';
+import {Router} from '@angular/router';
+import {LayoutService} from '../layout/layout.service';
 
 
 @Injectable()
 export class VoiceControlService {
+
+  private static helpModal;
 
   public state = {
     enabled: !!config.voice_command,
@@ -29,8 +31,6 @@ export class VoiceControlService {
 
   public helpShown = new EventEmitter();
 
-  private static helpModal;
-
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
               private app: ApplicationRef,
               private soundService: SoundService,
@@ -38,53 +38,53 @@ export class VoiceControlService {
               private notificationService: NotificationService,
               private bodyService: BodyService,
               private router: Router,
-              private layoutService: LayoutService,) {
+              private layoutService: LayoutService, ) {
 
     this.state.available = !!SpeechRecognition;
 
     if (config.voice_command_auto) {
-      this.voiceControlOn()
+      this.voiceControlOn();
     }
 
 
-    this.voiceRecognitionService.events.subscribe((event)=> {
+    this.voiceRecognitionService.events.subscribe((event) => {
       switch (event.type) {
         case 'start':
-          this.bodyService.removeClass("service-not-allowed");
-          this.bodyService.addClass("service-allowed");
+          this.bodyService.removeClass('service-not-allowed');
+          this.bodyService.addClass('service-allowed');
           break;
         case 'error':
-          this.bodyService.removeClass("service-allowed");
-          this.bodyService.addClass("service-not-allowed");
+          this.bodyService.removeClass('service-allowed');
+          this.bodyService.addClass('service-not-allowed');
           break;
         case 'match':
           this.notificationService.smallBox({
             title: event.payload,
-            content: "loading...",
-            color: "#333",
+            content: 'loading...',
+            color: '#333',
             sound_file: 'voice_alert',
             timeout: 2000
           });
           break;
         case 'no match':
           this.notificationService.smallBox({
-            title: "Error: <strong>" + ' " ' + event.payload + ' " ' + "</strong> no match found!",
-            content: "Please speak clearly into the microphone",
-            color: "#a90329",
+            title: 'Error: <strong>' + ' " ' + event.payload + ' " ' + '</strong> no match found!',
+            content: 'Please speak clearly into the microphone',
+            color: '#a90329',
             timeout: 5000,
-            icon: "fa fa-microphone"
+            icon: 'fa fa-microphone'
           });
           break;
 
         case 'action':
           this.respondToAction(event);
-          break
+          break;
       }
-    })
+    });
   }
 
 
-  public attachHelp(){
+  public attachHelp() {
     if (this.state.available && !VoiceControlService.helpModal) {
 
       const component = this.componentFactoryResolver.resolveComponentFactory(CommandsHelpComponent);
@@ -95,7 +95,7 @@ export class VoiceControlService {
   }
 
   public showHelp() {
-    setTimeout(()=> {
+    setTimeout(() => {
       // debugger
 
       VoiceControlService.helpModal._component.show();
@@ -105,14 +105,14 @@ export class VoiceControlService {
   }
 
   public hideHelp() {
-    VoiceControlService.helpModal && VoiceControlService.helpModal._component.hide()
+    VoiceControlService.helpModal && VoiceControlService.helpModal._component.hide();
   }
 
 
   public voiceControlOn() {
     this.soundService.play('voice_on');
     if (!this.voiceRecognitionService.commandsList.length) {
-      this.voiceRecognitionService.addCommands(config.voice_commands)
+      this.voiceRecognitionService.addCommands(config.voice_commands);
     }
     this.voiceRecognitionService.start();
     this.state.started = true;
@@ -140,12 +140,13 @@ export class VoiceControlService {
           case 'stop':
             this.voiceControlOff();
             this.notificationService.smallBox({
-              title: "VOICE COMMAND OFF",
-              content: "Your voice commands has been successfully turned off. Click on the <i class='fa fa-microphone fa-lg fa-fw'></i> icon to turn it back on.",
-              color: "#40ac2b",
+              title: 'VOICE COMMAND OFF',
+              content: 'Your voice commands has been successfully turned off. \
+                Click on the <i class=\'fa fa-microphone fa-lg fa-fw\'></i> icon to turn it back on.',
+              color: '#40ac2b',
               sound_file: 'voice_off',
               timeout: 8000,
-              icon: "fa fa-microphone-slash"
+              icon: 'fa fa-microphone-slash'
             });
             break;
         }
@@ -176,6 +177,5 @@ export class VoiceControlService {
     }
 
   }
-
 
 }

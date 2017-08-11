@@ -28,7 +28,7 @@ export const oldRoutes: Routes = [
 ];
 export const routes: Routes = [
   { path: '',
-    component: PublicLayoutComponent,
+    component: MainLayoutComponent,
     pathMatch: 'full'
   },
   { path: '**', component: EmptyLayoutComponent }

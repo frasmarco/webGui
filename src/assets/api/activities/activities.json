@@ -5,7 +5,7 @@
     "data": [
       {
         "title": "John Doe",
-        "image": "assets/img/avatars/4.png",
+        "image": "assets/img/avatars/male.png",
         "time": "2 minutes ago",
         "subject": "Msed quia non numquam eius modi tempora",
         "message": "Hello again and thanks for being a part of the newsletter.",
@@ -23,7 +23,7 @@
       },
       {
         "title": "Cristina Algera",
-        "image": "assets/img/avatars/1.png",
+        "image": "assets/img/avatars/female.png",
         "time": "TSunday, September 15th",
         "subject": "Best-Selling Teethers",
         "message": "ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?",
@@ -41,7 +41,7 @@
       },
       {
         "title": "Project approved! ",
-        "image": "assets/img/avatars/sunny.png",
+        "image": "assets/img/avatars/male.png",
         "time": "TSunday, June 14th",
         "subject": "Et harum quidem rerum facilis est et expedita distinctio",
         "message": "...",

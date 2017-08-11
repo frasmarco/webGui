@@ -40,18 +40,17 @@ export class VoiceRecognitionService {
       return optional ? match : '([^\\s]+)';
     }).replace(splatParam, '(.*?)').replace(optionalRegex, '\\s*$1?\\s*');
     return new RegExp('^' + command + '$', 'i');
-  };
-
+  }
 
   public  isInitialized() {
     return !!this.recognition;
-  };
+  }
 
   public initIfNeeded() {
     if (!this.isInitialized()) {
       this.init({}, false);
     }
-  };
+  }
 
 
   // Initialize smartSpeechRecognition with a list of commands to recognize.
@@ -77,9 +76,9 @@ export class VoiceRecognitionService {
     // Sets the language to the default 'en-US'. This can be changed with smartSpeechRecognition.setLanguage()
     recognition.lang = config.voice_command_lang || 'en-US';
 
-    recognition.onstart = ()=> {
+    recognition.onstart = () => {
       // invokeCallbacks(callbacks.start);
-      //debugState
+      // debugState
       if (config.debugState) {
         console.log('%c ✔ SUCCESS: User allowed access the microphone service to start ', config.debugStyle_success);
         console.log('Language setting is set to: ' + recognition.lang, config.debugStyle);
@@ -100,16 +99,17 @@ export class VoiceRecognitionService {
         case 'service-not-allowed':
           // if permission to use the mic is denied, turn off auto-restart
           this.autoRestart = false;
-          //debugState
+          // debugState
           if (config.debugState) {
-            console.log('%c WARNING: Microphone was not detected (either user denied access or it is not installed properly) ', config.debugStyle_warning);
+            console.log('%c WARNING: Microphone was not detected \
+            (either user denied access or it is not installed properly) ', config.debugStyle_warning);
           }
           // determine if permission was denied by user or automatically.
           if (new Date().getTime() - this.lastStartedAt < 200) {
             // invokeCallbacks(callbacks.errorPermissionBlocked);
           } else {
             // invokeCallbacks(callbacks.errorPermissionDenied);
-            //console.log("You need your mic to be active")
+            // console.log("You need your mic to be active")
           }
 
           this.events.emit({
@@ -135,7 +135,7 @@ export class VoiceRecognitionService {
             this.start({})
           }, 1000 - timeSinceLastStart);
         } else {
-          this.start({})
+          this.start({});
         }
       }
     };
@@ -165,10 +165,10 @@ export class VoiceRecognitionService {
                 console.log('with parameters', parameters);
               }
             }
-            if (this.commandsList[j].type == 'action') {
-              setTimeout(()=>{
-                this.events.emit(this.commandsList[j])
-              }, 50)
+            if (this.commandsList[j].type === 'action') {
+              setTimeout(() => {
+                this.events.emit(this.commandsList[j]);
+              }, 50);
 
             } else {
               // execute the matched command
@@ -178,13 +178,13 @@ export class VoiceRecognitionService {
 
 
             // for commands "sound on", "stop" and "mute" do not play sound or display message
-            const ignoreCallsFor = ["sound on", "mute", "stop"];
+            const ignoreCallsFor = ['sound on', 'mute', 'stop'];
 
             if (ignoreCallsFor.indexOf(this.commandsList[j].originalPhrase) < 0) {
               this.events.emit({
                 type: 'match',
                 payload: this.commandsList[j].originalPhrase
-              })
+              });
             }// end if
 
             return true;
@@ -193,7 +193,7 @@ export class VoiceRecognitionService {
       }// end for
 
       // invokeCallbacks(callbacks.resultNoMatch);
-      //console.log("no match found for: " + commandText)
+      // console.log("no match found for: " + commandText)
       this.events.emit({
         type: 'no match',
         payload: commandText
@@ -259,9 +259,9 @@ export class VoiceRecognitionService {
 
     this.initIfNeeded();
 
-    Object.keys(commands).forEach((phrase)=> {
+    Object.keys(commands).forEach((phrase) => {
       action = window[commands[phrase]] || commands[phrase];
-      //convert command to regex
+      // convert command to regex
       command = this.commandToRegExp(phrase);
 
       if (typeof action === 'function') {
@@ -305,7 +305,7 @@ export class VoiceRecognitionService {
       }
       return true;
     });
-  };
+  }
 
   // Lets the user add a callback of one of 9 types:
   // start, error, end, result, resultMatch, resultNoMatch, errorNetwork, errorPermissionBlocked, errorPermissionDenied
@@ -314,7 +314,7 @@ export class VoiceRecognitionService {
     if (this.callbacks[type] === undefined) {
       return;
     }
-    var cb = window[callback] || callback;
+    const cb = window[callback] || callback;
     if (typeof cb !== 'function') {
       return;
     }
@@ -329,6 +329,6 @@ export class VoiceRecognitionService {
     callbacks.forEach((callback) => {
       callback.callback.apply(callback.context);
     });
-  };
+  }
 
 }
