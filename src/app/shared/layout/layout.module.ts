@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 
 import {HeaderModule} from './header/header.module';
+import {PublicHeaderModule} from './public-header/header.module';
 import {FooterComponent} from './footer/footer.component';
 import {NavigationModule} from './navigation/navigation.module';
 import {RibbonComponent} from './ribbon/ribbon.component';
@@ -22,6 +23,7 @@ import { PublicLayoutComponent } from './app-layouts/public-layout.component';
   imports: [
     CommonModule,
     HeaderModule,
+    PublicHeaderModule,
     NavigationModule,
     FormsModule,
     RouterModule,
@@ -41,10 +43,11 @@ import { PublicLayoutComponent } from './app-layouts/public-layout.component';
     EmptyLayoutComponent,
     AuthLayoutComponent,
     PublicLayoutComponent,
-    RouteBreadcrumbsComponent,
+    RouteBreadcrumbsComponent
   ],
   exports: [
     HeaderModule,
+    PublicHeaderModule,
     NavigationModule,
     FooterComponent,
     RibbonComponent,

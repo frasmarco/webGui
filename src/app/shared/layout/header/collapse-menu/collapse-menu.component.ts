@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {LayoutService} from "../../layout.service";
+import {LayoutService} from '../../layout.service';
 
 declare var $: any;
 

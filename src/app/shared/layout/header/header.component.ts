@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 declare var $: any;
 
@@ -8,6 +8,7 @@ declare var $: any;
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
+  searchMobileActive = false;
 
   constructor(private router: Router) {
   }
@@ -16,9 +17,7 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  searchMobileActive = false;
-
-  toggleSearchMobile(){
+  toggleSearchMobile() {
     this.searchMobileActive = !this.searchMobileActive;
 
     $('body').toggleClass('search-mobile', this.searchMobileActive);
