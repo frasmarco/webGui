@@ -21,5 +21,5 @@ window['$'] = window['jQuery'];
 
 // import 'imports-loader?jQuery=jquery!jquery-color/jquery.color.js'
 
-// require('smartadmin-plugins/notification/SmartNotification.min.js');
+require('smartadmin-plugins/notification/SmartNotification.min.js');
 

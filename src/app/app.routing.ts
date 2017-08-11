@@ -29,7 +29,17 @@ export const oldRoutes: Routes = [
 export const routes: Routes = [
   { path: '',
     component: MainLayoutComponent,
-    pathMatch: 'full'
+    children: [
+      {
+        path: '',
+        loadChildren: 'app/+public/public.module#PublicModule'
+      },
+      {
+        path: 'home',
+        loadChildren: 'app/+home/home.module#HomeModule'
+      },
+    ]
+
   },
   { path: '**', component: EmptyLayoutComponent }
 ];
