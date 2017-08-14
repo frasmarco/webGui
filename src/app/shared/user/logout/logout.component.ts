@@ -35,7 +35,7 @@ export class LogoutComponent implements OnInit {
 
   logout() {
       // this.router.navigate(['/auth/login'])
-      location.href = '/logout';
+      location.href = '/auth/logout';
   }
 
   ngOnInit() {
