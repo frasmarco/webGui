@@ -9,6 +9,7 @@ import {AuthLayoutComponent} from './shared/layout/app-layouts/auth-layout.compo
 import {EmptyLayoutComponent} from './shared/layout/app-layouts/empty-layout.component';
 import {ModuleWithProviders} from '@angular/core';
 import { PublicLayoutComponent } from './shared/layout/app-layouts/public-layout.component';
+import { TokenGuard } from './shared/token/token-guard.service';
 
 export const oldRoutes: Routes = [
     {
@@ -36,6 +37,7 @@ export const routes: Routes = [
       },
       {
         path: 'home',
+        canActivate: [TokenGuard],
         loadChildren: 'app/+home/home.module#HomeModule'
       },
     ]
