@@ -16,7 +16,7 @@
         {
             "name": "IT Room Renovation<br><small class='text-muted'><i>Budget: 25,000<i></small>",
             "est": "<td><div class='progress progress-xs' data-progressbar-value='30'><div class='progress-bar'></div></div></td>",
-            "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='assets/img/avatars/2.png' class='online'></a> <a href='javascript:void(0)'><img src='assets/img/avatars/3.png' class='busy'></a><a href='javascript:void(0)'><img src='assets/img/avatars/sunny.png' class='away'></a> </div> ",
+            "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='online'></a> <a href='javascript:void(0)'><img src='assets/img/avatars/3.png' class='busy'></a><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='away'></a> </div> ",
             "status": "<span class='label label-success'>ACTIVE</span>",
             "target-actual": "<span style='margin-top:5px' class='sparkline display-inline' data-sparkline-type='compositebar' data-sparkline-height='18px' data-sparkline-line-width='2.5' data-sparkline-line-val='[2, 4, 5, 6, 11, 14, 15, 17, 18, 20, 22, 24, 26, 33, 35, 37, 44, 48, 50]' data-sparkline-bar-val='[4, 7, 8, 9, 14, 15, 16, 20, 21, 23, 24, 28, 29, 30, 34, 35, 36, 38, 41]'></span>",
             "actual": "<span class='sparkline text-align-center' data-sparkline-type='line' data-sparkline-width='100%' data-sparkline-height='25px'>20,-35,70</span>",
@@ -29,7 +29,7 @@
         {
             "name": "Car Industry Studies<br><small class='text-muted'><i>Budget: 1,000<i></small>",
             "est": "<td><div class='progress progress-xs' data-progressbar-value='55'><div class='progress-bar'></div></div></td>",
-            "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='online' alt='user'></a><a href='javascript:void(0)'><img src='assets/img/avatars/female.png' class='online'></a> <a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='busy'></a><a href='javascript:void(0)'><img src='assets/img/avatars/sunny.png' class='away'></a> </div> ",
+            "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='online' alt='user'></a><a href='javascript:void(0)'><img src='assets/img/avatars/female.png' class='online'></a> <a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='busy'></a><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='away'></a> </div> ",
             "status": "<span class='label label-success'>ACTIVE</span>",
             "target-actual": "<span style='margin-top:5px' class='sparkline display-inline' data-sparkline-type='compositebar' data-sparkline-height='18px' data-sparkline-barcolor='#aafaaf' data-sparkline-line-width='2.5' data-sparkline-line-val='[12, 11, 5, 15, 1, 10, 20, 4, 8, 6, 13, 2, 7, 9, 17, 14, 16, 18, 19]' data-sparkline-bar-val='[9, 11, 16, 15, 1, 5, 13, 2, 14, 6, 12, 17, 3, 18, 7, 10, 19, 8, 20]'></span>",
             "actual": "<span class='sparkline text-align-center' data-sparkline-type='line' data-sparkline-width='100%' data-sparkline-height='25px'>20,-35,70</span>",
@@ -146,7 +146,7 @@
         {
             "name": "Upgrade to windows 8.1<br><small class='text-muted'><i>Budget: 2,000<i></small>",
             "est": "<td><div class='progress progress-xs' data-progressbar-value='48'><div class='progress-bar'></div></div></td>",
-            "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='online' alt='user'></a><a href='javascript:void(0)'><img src='assets/img/avatars/female.png' class='online'></a> <a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='busy'></a><a href='javascript:void(0)'><img src='assets/img/avatars/sunny.png' class='away'></a> </div> ",
+            "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='online' alt='user'></a><a href='javascript:void(0)'><img src='assets/img/avatars/female.png' class='online'></a> <a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='busy'></a><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='away'></a> </div> ",
             "status": "<span class='label label-success'>ACTIVE</span>",
             "target-actual": "<span style='margin-top:5px' class='sparkline display-inline' data-sparkline-type='compositebar' data-sparkline-height='18px' data-sparkline-barcolor='#aafaaf' data-sparkline-line-width='2.5' data-sparkline-line-val='[46, 4, 30, 23, 20, 21, 3, 49, 10, 1, 37, 38, 47, 33, 25, 50, 40, 2, 28]' data-sparkline-bar-val='[46, 4, 30, 23, 20, 21, 3, 49, 10, 1, 37, 38, 47, 33, 25, 50, 40, 2, 28]'></span>",
             "actual": "<span class='sparkline text-align-center' data-sparkline-type='line' data-sparkline-width='100%' data-sparkline-height='25px'>20,-35,70</span>",
@@ -159,7 +159,7 @@
         {
             "name": "Refurbish Architecture<br><small class='text-muted'><i>Budget: 1,200<i></small>",
             "est": "<td><div class='progress progress-xs' data-progressbar-value='37'><div class='progress-bar'></div></div></td>",
-            "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='assets/img/avatars/sunny.png' class='away' alt='user'></a><a href='javascript:void(0)'><img src='assets/img/avatars/female.png' class='online'></a> </div> ",
+            "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='away' alt='user'></a><a href='javascript:void(0)'><img src='assets/img/avatars/female.png' class='online'></a> </div> ",
             "status": "<span class='label label-success'>ACTIVE</span>",
             "target-actual": "<span style='margin-top:5px' class='sparkline display-inline' data-sparkline-type='compositebar' data-sparkline-height='18px' data-sparkline-barcolor='#aafaaf' data-sparkline-line-width='2.5' data-sparkline-line-val='[28, 19, 30, 33, 10, 24, 38, 31, 47, 21, 13, 48, 9, 29, 46, 3, 42, 45, 18]' data-sparkline-bar-val='[11, 19, 17, 16, 27, 12, 47, 1, 4, 14, 8, 41, 13, 38, 6, 28, 36, 2, 45]'></span>",
             "actual": "<span class='sparkline text-align-center' data-sparkline-type='line' data-sparkline-width='100%' data-sparkline-height='25px'>20,-35,70</span>",
@@ -172,7 +172,7 @@
         {
             "name": "Create filters and directives<br><small class='text-muted'><i>Budget: 15,000<i></small>",
             "est": "<td><div class='progress progress-xs' data-progressbar-value='100'><div class='progress-bar'></div></div></td>",
-            "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='online' alt='user'></a><a href='javascript:void(0)'><img src='assets/img/avatars/female.png' class='online'></a> <a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='busy'></a><a href='javascript:void(0)'><img src='assets/img/avatars/sunny.png' class='away'></a> </div> ",
+            "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='online' alt='user'></a><a href='javascript:void(0)'><img src='assets/img/avatars/female.png' class='online'></a> <a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='busy'></a><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='away'></a> </div> ",
             "status": "<span class='label label-success'>ACTIVE</span>",
             "target-actual": "<span style='margin-top:5px' class='sparkline display-inline' data-sparkline-type='compositebar' data-sparkline-height='18px' data-sparkline-barcolor='#aafaaf' data-sparkline-line-width='2.5' data-sparkline-line-val='[6, 40, 14, 36, 32, 4, 7, 16, 50, 49, 24, 47, 33, 10, 45, 41, 18, 37, 38]' data-sparkline-bar-val='[9, 4, 32, 33, 18, 23, 17, 8, 30, 7, 48, 29, 10, 14, 6, 36, 28, 16, 24]'></span>",
             "actual": "<span class='sparkline text-align-center' data-sparkline-type='line' data-sparkline-width='100%' data-sparkline-height='25px'>20,-35,70</span>",
@@ -185,7 +185,7 @@
         {
             "name": "Publish to Wrapbootstrap<br><small class='text-muted'><i>Budget: 4,000<i></small>",
             "est": "<td><div class='progress progress-xs' data-progressbar-value='95'><div class='progress-bar'></div></div></td>",
-            "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='online' alt='user'></a><a href='javascript:void(0)'><img src='assets/img/avatars/female.png' class='online'></a> <a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='busy'></a><a href='javascript:void(0)'><img src='assets/img/avatars/sunny.png' class='away'></a> </div> ",
+            "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='online' alt='user'></a><a href='javascript:void(0)'><img src='assets/img/avatars/female.png' class='online'></a> <a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='busy'></a><a href='javascript:void(0)'><img src='assets/img/avatars/male.png' class='away'></a> </div> ",
             "status": "<span class='label label-success'>ACTIVE</span>",
             "target-actual": "<span style='margin-top:5px' class='sparkline display-inline' data-sparkline-type='compositebar' data-sparkline-height='18px' data-sparkline-barcolor='#aafaaf' data-sparkline-line-width='2.5' data-sparkline-line-val='[50, 4, 21, 25, 47, 35, 27, 44, 41, 23, 46, 29, 48, 39, 3, 28, 17, 8, 26]' data-sparkline-bar-val='[50, 4, 21, 25, 47, 35, 27, 44, 41, 23, 46, 29, 48, 39, 3, 28, 17, 8, 26]'></span>",
             "actual": "<span class='sparkline text-align-center' data-sparkline-type='line' data-sparkline-width='100%' data-sparkline-height='25px'>20,-35,70</span>",

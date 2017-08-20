@@ -2,25 +2,25 @@
     "users": [
         {
             "username": "Sadi Orlaf",
-            "picture": "assets/img/avatars/5.png",
+            "picture": "assets/img/avatars/male.png",
             "status": "busy",
             "role": "Marketing Executive"
         },
         {
             "username": "Jessica Dolof",
-            "picture": "assets/img/avatars/1.png",
+            "picture": "assets/img/avatars/female.png",
             "status": "online",
             "role": "Sales Administrator"
         },
         {
             "username": "Zekarburg Almandalie",
-            "picture": "assets/img/avatars/3.png",
+            "picture": "assets/img/avatars/female.png",
             "status": "online",
             "role": "Sales Admin"
         },
         {
             "username": "Barley Krazurkth",
-            "picture": "assets/img/avatars/4.png",
+            "picture": "assets/img/avatars/male.png",
             "status": "away",
             "role": "Sales Director"
         },
@@ -41,7 +41,7 @@
         {
             "user": {
                 "username": "Sadi Orlaf",
-                "picture": "assets/img/avatars/5.png",
+                "picture": "assets/img/avatars/male.png",
                 "status": "Online"
             },
             "date": "2014-10-01T21:08:06.388Z",
@@ -50,7 +50,7 @@
         {
             "user": {
                 "username": "John Doe",
-                "picture": "assets/img/avatars/sunny.png",
+                "picture": "assets/img/avatars/male.png",
                 "status": "Online"
             },
             "date": "2014-10-01T21:09:08.388Z",
