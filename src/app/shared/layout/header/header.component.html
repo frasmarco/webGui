@@ -57,11 +57,11 @@
     </ul>
 
     <!-- logout button -->
-    <sa-logout></sa-logout>
+    <sa-logout *ngIf="hasToken"></sa-logout>
     <!-- end logout button -->
 
     <!-- Social logins -->
-    <sa-login></sa-login>
+    <sa-login *ngIf="!hasToken"></sa-login>
     <!-- end social logins -->
 
     <!-- search mobile button (this is hidden till mobile view port) -->

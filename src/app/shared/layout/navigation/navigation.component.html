@@ -11,11 +11,11 @@
     -->
 
     <ul saSmartMenu>
-      <li>
+      <li *ngIf="!hasToken">
         <a routerLink="/" title="Home"><i class="fa fa-lg fa-fw fa-home"></i> <span
           class="menu-item-parent">{{'Home' | i18n}}</span></a>
       </li>
-      <li>
+      <li *ngIf="hasToken">
       <a routerLink="/home" title="Home"><i class="fa fa-lg fa-fw fa-home"></i> <span
         class="menu-item-parent">{{'Home' | i18n}}</span></a>
       </li>

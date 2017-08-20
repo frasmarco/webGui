@@ -21,7 +21,7 @@ export class TokenService {
   }
 
   refreshToken(): Observable<boolean> {
-    return this.http.get('/auth/token').map((response: Response) => {
+    return this.http.get('/auth/token', { responseType: 1 }).map((response: Response) => {
       // login successful if there's a jwt token in the response
       const token = response.json() && response.json().token;
       if (token) {

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import { TokenService } from '../../token/token.service';
 
 declare var $: any;
 
@@ -9,8 +10,9 @@ declare var $: any;
 })
 export class HeaderComponent implements OnInit {
   searchMobileActive = false;
+  hasToken = this.tokenService.tokenNotExpired();
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private tokenService: TokenService) {
   }
 
   ngOnInit() {
