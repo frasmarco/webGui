@@ -15,7 +15,7 @@ export class JsonApiService {
   constructor(private http: Http) {}
 
   public fetch(url): Observable<any> {
-    return this.http.get(this.getBaseUrl() + config.API_URL + url)
+    return this.http.get(config.API_URL + url)
       .delay(100)
       .map(this.extractData)
       .catch(this.handleError);
