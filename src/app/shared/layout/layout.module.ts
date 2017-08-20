@@ -18,6 +18,7 @@ import {TooltipModule, BsDropdownModule} from 'ngx-bootstrap';
 import { RouteBreadcrumbsComponent } from './ribbon/route-breadcrumbs.component';
 import {UtilsModule} from '../utils/utils.module';
 import { PublicLayoutComponent } from './app-layouts/public-layout.component';
+import { I18nModule } from '../i18n/i18n.module';
 
 @NgModule({
   imports: [
@@ -27,7 +28,7 @@ import { PublicLayoutComponent } from './app-layouts/public-layout.component';
     NavigationModule,
     FormsModule,
     RouterModule,
-
+    I18nModule,
     UtilsModule,
 
 

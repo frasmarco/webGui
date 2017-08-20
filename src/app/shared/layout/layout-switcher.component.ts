@@ -9,7 +9,8 @@ declare var $: any;
 
 @Component({
   selector: 'sa-layout-switcher',
-  templateUrl: './layout-switcher.component.html'
+  templateUrl: './layout-switcher.component.html',
+  styleUrls: ['./layout-switcher.component.css']
 })
 export class LayoutSwitcherComponent implements OnInit, OnDestroy {
   isActivated: boolean;

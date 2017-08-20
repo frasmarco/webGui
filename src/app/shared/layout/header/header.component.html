@@ -66,14 +66,14 @@
 
     <!-- search mobile button (this is hidden till mobile view port) -->
     <div id="search-mobile" class="btn-header transparent pull-right">
-      <span> <a (click)="toggleSearchMobile()" title="Search"><i class="fa fa-search"></i></a> </span>
+      <span> <a (click)="toggleSearchMobile()" title="{{'Search' | i18n}}"><i class="fa fa-search"></i></a> </span>
     </div>
     <!-- end search mobile button -->
 
     <!-- input: search field -->
     <form #searchForm="ngForm" (ngSubmit)="onSubmit()" class="header-search pull-right">
       <input id="search-fld" type="text" name="param" required
-             placeholder="Find reports and more">
+             placeholder="{{'SearchVerbose' | i18n}}">
       <button type="submit">
         <i class="fa fa-search"></i>
       </button>

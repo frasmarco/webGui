@@ -8,7 +8,7 @@ declare var $: any;
   selector: 'sa-logout',
   template: `
 <div id="logout" (click)="showPopup()" class="btn-header transparent pull-right">
-        <span> <a routerLink="/logout" title="Sign Out" data-action="userLogout"><i
+        <span> <a routerLink="/logout" title="{{'Log Out' | i18n}}" data-action="userLogout"><i
           class="fa fa-sign-out"></i></a> </span>
     </div>
   `,
@@ -23,7 +23,7 @@ export class LogoutComponent implements OnInit {
     this.notificationService.smartMessageBox({
       title : '<i class=\'fa fa-sign-out txt-color-orangeDark\'></i> \
       Logout <span class=\'txt-color-orangeDark\'><strong>' + $('#show-shortcut').text() + '</strong></span> ?',
-      content : 'You can improve your security further after logging out by closing this opened browser',
+      content : '',
       buttons : '[No][Yes]'
 
     }, (ButtonPressed) => {

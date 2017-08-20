@@ -2,39 +2,32 @@
   class="fa fa-cog txt-color-blueDark"></i></span>
 
   <form>
-    <legend class="no-padding margin-bottom-10">Layout Options</legend>
+    <legend class="no-padding margin-bottom-10">{{'Layout Options' | i18n}}</legend>
     <section>
+      <hr>
+      <h6 class="margin-top-10 semi-bold margin-bottom-5">{{'Fixed' | i18n}}</h6>
       <label><input type="checkbox" (click)="onFixedHeader()" [(ngModel)]="store.fixedHeader" name="fixedHeader"
-                    class="checkbox style-0"><span>Fixed Header</span></label>
+                    class="checkbox style-0"><span>{{'Header' | i18n}}</span></label>
       <label><input type="checkbox"
                     (click)="onFixedNavigation()" [(ngModel)]="store.fixedNavigation" name="fixedNavigation"
-                    class="checkbox style-0"><span>Fixed Navigation</span></label>
+                    class="checkbox style-0"><span>{{'Navigation' | i18n}}</span></label>
       <label><input type="checkbox"
                     (click)="onFixedRibbon()" [(ngModel)]="store.fixedRibbon" name="fixedRibbon"
-                    class="checkbox style-0"><span>Fixed Ribbon</span></label>
+                    class="checkbox style-0"><span>{{'Ribbon' | i18n}}</span></label>
       <label><input type="checkbox"
                     (click)="onFixedPageFooter()" [(ngModel)]="store.fixedPageFooter" name="fixedPageFooter"
-                    class="checkbox style-0"><span>Fixed Footer</span></label>
-      <label><input type="checkbox"
-                    (click)="onInsideContainer()" [(ngModel)]="store.insideContainer" name="insideContainer"
-                    class="checkbox style-0"><span>Inside <b>.container</b></span></label>
-      <label><input type="checkbox"
-                    (click)="onRtl()" [(ngModel)]="store.rtl" name="rtl"
-                    class="checkbox style-0"><span>RTL</span></label>
+                    class="checkbox style-0"><span>{{'Footer' | i18n}}</span></label>
+      <hr>
       <label><input type="checkbox"
                     (click)="onMenuOnTop()" [(ngModel)]="store.menuOnTop" name="menuOnTop"
-                    class="checkbox style-0"><span>Menu on <b>top</b></span></label>
-      <label><input type="checkbox"
-                    (click)="onColorblindFriendly()" [(ngModel)]="store.colorblindFriendly" name="colorblindFriendly"
-                    class="checkbox style-0"><span>For Colorblind <div
-        class="font-xs text-right">(experimental)
-            </div></span>
-      </label><span id="smart-bgimages"></span></section>
-    <section><h6 class="margin-top-10 semi-bold margin-bottom-5">Clear Localstorage</h6><a
+                    class="checkbox style-0"><span>{{'Menu on top' | i18n}}</span></label>
+      <!--<span id="smart-bgimages"></span>-->
+    </section>
+    <section><h6 class="margin-top-10 semi-bold margin-bottom-5">{{'Clear Localstorage' | i18n}}</h6><a
       (click)="factoryReset()" class="btn btn-xs btn-block btn-primary" id="reset-smart-widget"><i
-      class="fa fa-refresh"></i> Factory Reset</a></section>
+      class="fa fa-refresh"></i> {{'Factory Reset' | i18n}}</a></section>
 
-    <h6 class="margin-top-10 semi-bold margin-bottom-5">SmartAdmin Skins</h6>
+    <h6 class="margin-top-10 semi-bold margin-bottom-5">{{'Skins' | i18n}}</h6>
 
 
     <section id="smart-styles">
