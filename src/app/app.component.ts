@@ -10,7 +10,5 @@ export class AppComponent implements OnInit {
   public constructor(private viewContainerRef: ViewContainerRef, private tokenService: TokenService) {}
 
   ngOnInit() {
-    this.tokenService.getToken()
-    .subscribe();
   }
 }

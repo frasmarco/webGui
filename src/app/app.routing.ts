@@ -11,22 +11,6 @@ import {ModuleWithProviders} from '@angular/core';
 import { PublicLayoutComponent } from './shared/layout/app-layouts/public-layout.component';
 import { TokenGuard } from './shared/token/token-guard.service';
 
-export const oldRoutes: Routes = [
-    {
-        path: '',
-        component: MainLayoutComponent,
-        children: [
-            {
-                path: '', redirectTo: 'home', pathMatch: 'full'
-            },
-            {
-                path: 'home',
-                loadChildren: 'app/+home/home.module#HomeModule'
-            },
-        ]
-    },
-
-];
 export const routes: Routes = [
   { path: '',
     component: MainLayoutComponent,
